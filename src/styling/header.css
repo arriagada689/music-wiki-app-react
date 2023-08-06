@@ -1,0 +1,13 @@
+.header {
+    background-color: #009E60;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Space Mono','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

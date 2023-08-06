@@ -1,0 +1,33 @@
+.mini-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: start; /* Adjust alignment to handle multi-line content */
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mini-card-name,
+.mini-card-artist,
+.mini-card-year {
+  white-space: normal; /* Allow wrapping onto next line */
+  overflow-wrap: break-word; /* Break to a new line if necessary */
+  color: white;
+}
+
+.mini-card-name {
+  flex-basis: 60%;
+}
+
+.mini-card-artist,
+.mini-card-year {
+  flex-basis: 20%;
+  text-align: right;
+}
+
+.playlist-track-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}

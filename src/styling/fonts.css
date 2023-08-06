@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Space Mono';
+    src: local('Space Mono'), 
+            url('../fonts/SpaceMono-Bold.ttf') format('truetype'),
+            url('../fonts/SpaceMono-BoldItalic.ttf') format('truetype'),
+            url('../fonts/SpaceMono-Italic.ttf') format('truetype'),
+            url('../fonts/SpaceMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

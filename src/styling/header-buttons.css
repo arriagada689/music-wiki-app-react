@@ -1,0 +1,28 @@
+.header-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.header-button {
+    padding: 5px 20px;
+    border: none;
+    background-color: #FF6347;
+    color: white;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.header-button:hover {
+    background-color: #FF4500;
+}
+
+.selected {
+    background-color: #4286f4;
+}
+
+.selected:hover {
+    background-color: #373B44;
+}
