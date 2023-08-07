@@ -24,8 +24,24 @@ const WikiPage = ({data, token, handleItemClick}) => {
     useEffect(() => {
         if(data.type === 'playlist'){
             getTracks();
+        } else if(data.type === 'album'){
+            getAlbumTracks();
         }
     }, [data]);
+
+    const getAlbumTracks = () => {
+        fetch(data.href, {
+            method: "GET",
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+        })
+        .then((response) => response.json())
+            .then((data) => {
+                setTracks(data.tracks.items);
+            })
+    }
 
     const createDiv = () => {
         if(data.type === 'album'){
@@ -35,6 +51,8 @@ const WikiPage = ({data, token, handleItemClick}) => {
             const releaseDate = data.release_date;
             const totalTracks = data.total_tracks;
             const spotifyLink = data.external_urls.spotify;
+            // console.log(data);
+
             return (
                 <div className="wiki-page">
                     <img src={image} alt="album cover"/>
@@ -52,6 +70,23 @@ const WikiPage = ({data, token, handleItemClick}) => {
                         <div className="wiki-label">{totalTracks}</div>
                     </div>
                     <a href={spotifyLink} className="spotify-link">Listen on Spotify</a>
+                    
+                    <div className="genre-label">Tracks:</div>
+                    <div className="playlist-track-container">
+                        {
+                            tracks.length > 0 ? (
+                                tracks.map((track, i) => {
+                                    const name = track.name;
+                                    const artist = track.artists[0].name;
+                                    const duration = convertMs(track.duration_ms); 
+                                    return <MiniCard name={name} artist={artist} year={duration} key={i}/>
+                                })
+                            ) : (
+                                <div>No tracks available</div>
+                            )
+                        }
+                    </div>
+
                 </div>
             );
         } else if(data.type === 'track'){
