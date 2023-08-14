@@ -40,6 +40,14 @@
   background-color: #FF4500;
 }
 
+.center {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
 .add-margin-left {
+  margin: 0;
   margin-left: 20px;
+  margin-bottom: 10px;
 }

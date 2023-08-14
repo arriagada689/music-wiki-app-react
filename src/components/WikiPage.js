@@ -197,7 +197,9 @@ const WikiPage = ({data, token, handleItemClick}) => {
 
     return (  
         <div>
-            <button onClick={() => handleItemClick(null)} className='searchButton add-margin-left'>Go back to results</button>
+            <div className='center'>
+                <button onClick={() => handleItemClick(null)} className='searchButton add-margin-left'>Go back to results</button>
+            </div>
             {createDiv()}
         </div>
     );
