@@ -4,9 +4,6 @@ import '../styling/header.css';
 import '../styling/search-bar.css';
 import '../styling/initial-s-bar.css';
 
-const clientId = 'bf57d7d988214b52bb2451faa1263683';
-const clientSecret = '358b1b14f5d642ef8e3a3c3204bff5a4';
-
 function App() {
   const [value, setValue] = useState('');
   const [token, setToken] = useState('');
@@ -16,16 +13,10 @@ function App() {
   const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {
-    fetch('https://accounts.spotify.com/api/token', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: `client_id=${encodeURIComponent(clientId)}&client_secret=${encodeURIComponent(clientSecret)}&grant_type=client_credentials`
-    })
+    fetch('http://arriagada689.github.io/music-wiki-app-react/initial')
       .then((response) => response.json())
       .then((token) => {
-          setToken(token.access_token);
+        setToken(token.access_token);
       })
   }, []);
 
