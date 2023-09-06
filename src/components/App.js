@@ -16,6 +16,7 @@ function App() {
     fetch('https://crimson-chivalrous-chipmunk.glitch.me/initial')
       .then((response) => response.json())
       .then((token) => {
+        console.log(token);
         setToken(token.access_token);
       })
   }, []);
