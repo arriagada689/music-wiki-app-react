@@ -5,11 +5,7 @@ require('dotenv').config();
 
 const app = express()
 
-app.use(cors())
-
-app.get('/', (req, res) => {
-    res.json('hi');
-})
+app.use(cors());
 
 app.get('/initial', (req, res) => {
     fetch('https://accounts.spotify.com/api/token', {

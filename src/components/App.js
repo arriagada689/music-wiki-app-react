@@ -13,7 +13,7 @@ function App() {
   const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {
-    fetch('https://arriagada689.github.io/music-wiki-app-react/initial')
+    fetch('https://crimson-chivalrous-chipmunk.glitch.me/initial')
       .then((response) => response.json())
       .then((token) => {
         setToken(token.access_token);
