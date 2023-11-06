@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/music-wiki-app-react/static/css/main.d250ae2b.css",
-    "main.js": "/music-wiki-app-react/static/js/main.97349ba1.js",
+    "main.css": "/music-wiki-app-react/static/css/main.f68e315e.css",
+    "main.js": "/music-wiki-app-react/static/js/main.2085e084.js",
     "static/media/SpaceMono-Italic.ttf": "/music-wiki-app-react/static/media/SpaceMono-Italic.0daff04789950b311b31.ttf",
     "static/media/SpaceMono-BoldItalic.ttf": "/music-wiki-app-react/static/media/SpaceMono-BoldItalic.973410642f95c92e505b.ttf",
     "static/media/SpaceMono-Regular.ttf": "/music-wiki-app-react/static/media/SpaceMono-Regular.8a2aa304d0bd5e41d186.ttf",
     "static/media/SpaceMono-Bold.ttf": "/music-wiki-app-react/static/media/SpaceMono-Bold.056ac3ebe5f65cb5c4ac.ttf",
     "index.html": "/music-wiki-app-react/index.html",
-    "main.d250ae2b.css.map": "/music-wiki-app-react/static/css/main.d250ae2b.css.map",
-    "main.97349ba1.js.map": "/music-wiki-app-react/static/js/main.97349ba1.js.map"
+    "main.f68e315e.css.map": "/music-wiki-app-react/static/css/main.f68e315e.css.map",
+    "main.2085e084.js.map": "/music-wiki-app-react/static/js/main.2085e084.js.map"
   },
   "entrypoints": [
-    "static/css/main.d250ae2b.css",
-    "static/js/main.97349ba1.js"
+    "static/css/main.f68e315e.css",
+    "static/js/main.2085e084.js"
   ]
 }
