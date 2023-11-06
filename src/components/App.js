@@ -1,4 +1,5 @@
 import Search from './Search';
+import LoadingEllipses from './LoadingEllipses';
 import { useState, useEffect } from "react";
 import '../styling/header.css';
 import '../styling/search-bar.css';
@@ -8,6 +9,7 @@ function App() {
   const [value, setValue] = useState('');
   const [token, setToken] = useState('');
   const [data, setData] = useState(null);
+  const [error, setError] = useState(false);
   
   const [searchKey, setSearchKey] = useState(0);
   const [showResults, setShowResults] = useState(false);
@@ -15,8 +17,14 @@ function App() {
   useEffect(() => {
     fetch('https://crimson-chivalrous-chipmunk.glitch.me/initial')
       .then((response) => response.json())
-      .then((token) => {
-        setToken(token.access_token);
+      .then((data) => {
+        if(data.access_token){
+          setToken(data.access_token);
+        } else if(data.error) {
+          setError(true);
+        }
+      })
+      .catch((error) => {
       })
   }, []);
 
@@ -47,7 +55,9 @@ function App() {
   return (
     <div className="App">
       <header className="header">Music Wiki App</header>
-      {!showResults && 
+      {token.length === 0 && !error && <div className='centered-container'><div className='loading place-next'>Loading<LoadingEllipses/></div></div>}
+      {error && <div className='centered-container'><div className='loading'>Error fetching data. Spotify API may be down.</div></div>}
+      {!showResults && token.length > 0 &&
       <div className="middle">
         <div className="prompt">Search for your favorite albums, tracks, artists, or playlists!</div>
         <form className='a' onSubmit={(event) => {event.preventDefault(); handleSubmit(); }}>
